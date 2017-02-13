@@ -31,7 +31,7 @@ void loop() {
         level < 150 ? level : 100, // cap level to 100%, just for graphing, i don't want to see your lab, when the battery actually gets to that level
         rawLevel,
         String(realVoltage, 3).c_str(),
-        rawLevel > 850 ? 1 : 0 // USB is connected if the reading is ~870, as the voltage will be 5V, so we assume it's charging
+        rawLevel > 800 ? 1 : 0 // USB is connected if the reading is ~870, as the voltage will be 5V, so we assume it's charging
     );
 
     udp.beginPacket({192, 168, 1, 1}, 8089);
