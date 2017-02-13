@@ -12,9 +12,11 @@ void loop() {
     // 10k?/(47k?+10k?)*3.7v = 0.649v
     // 10k?/(47k?+10k?)*3.1v = 0.544
     // * i asumed 3.1v as minimum voltage => see LiPO discharge diagrams
+    // the actual minimum i've seen was 467, which would be 2.7V immediately before automatic cutoff
+    // a measurement on the LiPo Pins directly resulted in >3.0V, so thats good to know, but no danger to the battery.
 
     // convert battery level to percent
-    int level = map(rawLevel, 544, 649, 0, 100);
+    int level = map(rawLevel, 500, 649, 0, 100);
 
     // i'd like to report back the real voltage, so apply some math to get it back
     // 1. convert the ADC level to a float
