@@ -6,11 +6,11 @@ void loop() {
 
     int rawLevel = analogRead(A0);
 
-    // the 10k?/47k? voltage divider reduces the voltage, so the ADC Pin can handle it
+    // the 10kΩ/47kΩ voltage divider reduces the voltage, so the ADC Pin can handle it
     // According to Wolfram Alpha, this results in the following values:
-    // 10k?/(47k?+10k?)*  5v = 0.8772v
-    // 10k?/(47k?+10k?)*3.7v = 0.649v
-    // 10k?/(47k?+10k?)*3.1v = 0.544
+    // 10kΩ/(47kΩ+10kΩ)*  5v = 0.8772v
+    // 10kΩ/(47kΩ+10kΩ)*3.7v = 0.649v
+    // 10kΩ/(47kΩ+10kΩ)*3.1v = 0.544
     // * i asumed 3.1v as minimum voltage => see LiPO discharge diagrams
     // the actual minimum i've seen was 467, which would be 2.7V immediately before automatic cutoff
     // a measurement on the LiPo Pins directly resulted in >3.0V, so thats good to know, but no danger to the battery.
